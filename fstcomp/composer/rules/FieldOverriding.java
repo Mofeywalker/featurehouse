@@ -40,8 +40,8 @@ public class FieldOverriding extends AbstractCompositionRule {
 		if(terminalA.getBody().contains("@") || terminalB.getBody().contains("@"))
 			return;
 		
-		//System.err.println("terminalA: " + terminalA.getBody());
-		//System.err.println("terminalB: " + terminalB.getBody());
+		System.err.println("terminalA: " + terminalA.getBody());
+		System.err.println("terminalB: " + terminalB.getBody());
 		
 		StringTokenizer stA;
 		if((terminalA.getBody().indexOf(",") > 0 && terminalA.getBody().indexOf("=") > 0 && terminalA.getBody().indexOf(",") < terminalA.getBody().indexOf("=")) || (terminalA.getBody().indexOf(",") > 0 && terminalA.getBody().indexOf("=") < 0)) {

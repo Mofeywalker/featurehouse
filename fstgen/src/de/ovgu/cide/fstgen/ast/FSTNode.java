@@ -53,4 +53,7 @@ public abstract class FSTNode {
 			return getParent().getFeatureName();
 		}
 	}
+	//////////////////
+	public String export() {return "";}
+	//////////////////
 }

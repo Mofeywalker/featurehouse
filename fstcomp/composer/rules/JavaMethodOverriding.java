@@ -60,6 +60,11 @@ public class JavaMethodOverriding extends AbstractCompositionRule {
 					terminalA,
 					"Previously you used the keyword \\final_method. Thus you can't refine this method or contract!");
 
+		//System.out.println("Terminal A" + "\n" + terminalA.getBody());
+		//System.out.println("Terminal B" + "\n" +terminalB.getBody());
+		//System.out.println("TerminalComp" + "\n" +terminalComp.getBody());
+		//System.out.println(nonterminalParent.getName());
+		
 		CompositionMetadataStore meta = CompositionMetadataStore.getInstance();
 
 		specializeModifiers(terminalA, terminalB);
@@ -93,12 +98,26 @@ public class JavaMethodOverriding extends AbstractCompositionRule {
 			while (st.hasMoreTokens()) {
 				oldMethodName = st.nextToken();
 			}
-
+			
+			/////////////////
+			int pos = terminalB.getBody().indexOf("{");
+			String body = terminalB.getBody();
+			body = body.substring(pos+1, body.length()-1);
+			//System.out.println("BODY\n" + body);
+			
+			///////////////
 			String toReplace = "original\\s*\\(";
+			//String toReplace = "original\\s*\\([\\s\\S]*\\);";
 			String newMethodName = oldMethodName + "__wrappee__"
 					+ (terminalB.getOriginalFeatureName());
 			String newBody = getNewBody(terminalA, terminalB, terminalComp,
 					oldMethodName).replaceAll(toReplace, newMethodName + "(");
+			
+			//String newBody = terminalA.getBody().replaceAll(toReplace, body);
+			
+			/////////////
+			//System.out.println("New Body\n" + newBody);
+			/////////////
 			if (addFeatureAnnotations) {
 				newBody = JavaMethodOverriding.featureAnnotationPrefix
 						+ (terminalA.getOriginalFeatureName()) + "\")\n" + newBody;
@@ -121,6 +140,7 @@ public class JavaMethodOverriding extends AbstractCompositionRule {
 			annotations = annotations.replaceAll("@Override", "");
 			String prefix = terminalComp2.getBody().substring(annotationsEnd,methodNamePosition);
 			String restOfBody = terminalComp2.getBody().substring(methodNamePosition);
+			
 			// prefix is the header from end of annotations to begin of method
 			// name
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="de.htwsaar"
+		module="featurehouse"
+		revision="working@Moritz-Feys-iMac.local"
+		conf="test"
+		confs="default, master, compile, provided, runtime, test, system, sources, javadoc, optional"
+		date="20150428094730"/>
+	<dependencies>
+		<module organisation="com.google.code.gson" name="gson">
+			<revision name="2.3.1" status="release" pubdate="20141120104214" resolver="public" artresolver="main" homepage="http://code.google.com/p/google-gson/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3458" time="0" location="/Users/mfey/Github/featurehouse/libs/cache/com.google.code.gson/gson/ivy-2.3.1.xml" searched="false" original-local-location="/Users/mfey/Github/featurehouse/libs/cache/com.google.code.gson/gson/ivy-2.3.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom"/>
+				<caller organisation="de.htwsaar" name="featurehouse" conf="test, compile, runtime" rev="2.3.1" rev-constraint-default="2.3.1" rev-constraint-dynamic="2.3.1" callerrev="working@Moritz-Feys-iMac.local"/>
+				<artifacts>
+					<artifact name="gson" type="jar" ext="jar" status="no" details="" size="210856" time="0" location="/Users/mfey/Github/featurehouse/libs/cache/com.google.code.gson/gson/jars/gson-2.3.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

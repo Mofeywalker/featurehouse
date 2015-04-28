@@ -37,7 +37,11 @@ public class CmdLineInterpreter {
 	public static final String INPUT_OPTION_ANNOTATION = "--featureAnnotationJava";
 	
 	public static final String INPUT_OPTION_EXPORT_ROLES_IN_JSON_FORMAT = "--export_roles_json";
-
+	
+	//////////
+	public static final String INPUT_OPTION_EXPORT_SNIPPET = "--export-snippet";
+	/////////
+	
 	public boolean verbose = false;
 
 	public boolean isCount = false;
@@ -71,6 +75,10 @@ public class CmdLineInterpreter {
 	public boolean featureAnnotation = false;
 	
 	public boolean exportRolesInJSONformat = false;
+	
+	/////////
+	public boolean exportSnippet = false;
+	////////
 
 	public void parseCmdLineArguments(String[] args) {
 		boolean jml = false;
@@ -163,6 +171,8 @@ public class CmdLineInterpreter {
 					}
 				} else if (args[i].equals(INPUT_OPTION_EXPORT_ROLES_IN_JSON_FORMAT)) {
 					exportRolesInJSONformat=true;
+				} else if (args[i].equals(INPUT_OPTION_EXPORT_SNIPPET)) {
+					exportSnippet = true;
 				} else {
 					errorOccured = true;
 				}

@@ -7,5 +7,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/CIDE2_ast"/>
 	<classpathentry kind="lib" path="lib/ant.jar"/>
 	<classpathentry kind="lib" path="lib/junit-4.8.2.jar"/>
+	<classpathentry kind="lib" path="/Users/mfey/Github/featurehouse/libs/gson-2.3.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

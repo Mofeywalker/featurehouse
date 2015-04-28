@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="de.htwsaar"
+		module="featurehouse"
+		revision="working@Moritz-Feys-iMac.local"
+		conf="optional"
+		confs="default, master, compile, provided, runtime, test, system, sources, javadoc, optional"
+		date="20150428094730"/>
+	<dependencies>
+	</dependencies>
+</ivy-report>

@@ -1,5 +1,8 @@
 package de.ovgu.cide.fstgen.ast;
 
+import com.google.gson.*;
+import java.lang.reflect.Type;
+
 public class FSTTerminal extends FSTNode {
 
 	public final static String defaultCompositionMechanism = "Replacement";
@@ -94,14 +97,50 @@ public class FSTTerminal extends FSTNode {
 
 	@Override
 	public String toString() {
+		///////////////////////////////////////
+		
 		return "[T -> " + getName() + " : " + getType()
 				+ " \""
 				// + (prefix.length() != 0 ? prefix.replaceAll("\\s", " ") : "")
 				// + "\" \""
 				+ (body.length() != 0 ? body.replaceAll("\\s", " ") : "")
 				+ "\" compose:" + compose + " merge: " + merge + "]";
+		
+		///////////////////////////////////////
+		//return export();
 	}
-
+	
+	//////////////////////////////
+	public String export() {
+		//Gson gson = new Gson();
+		//System.out.println(gson.toJson(this));
+		return "";
+		/*
+		return escapeCharacters("{" + "\"type\":" + "\"" + getType() + "\"" +
+				",\"name\":" + "\"" +getName() + "\"" +
+				",\"body\":" + "\"" +getBody() + "\"" +
+				",\"feature\":" + "\"" + getFeatureName() + "\"" + "}");
+		 */
+	}
+	
+	public String escapeCharacters(String in) {
+		String out;
+		in.replaceAll("\"", "\\\"");
+		return in;
+	}
+	
+	
+	public static class FSTTerminalSerializer implements JsonSerializer<FSTTerminal> {
+        public JsonElement serialize(final FSTTerminal node, final Type type, final JsonSerializationContext context) {
+            JsonObject result = new JsonObject();
+            result.add("name", new JsonPrimitive(node.getName()));
+            result.add("type", new JsonPrimitive(node.getType()));
+            result.add("body", new JsonPrimitive(node.getBody()));
+            return result;
+        }
+	}
+	
+	//////////////////////////////
 	public String printFST(int indent) {
 		StringBuffer buffer = new StringBuffer();
 		for (int i = 0; i < indent; i++)

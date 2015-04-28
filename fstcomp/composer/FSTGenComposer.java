@@ -5,18 +5,20 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.file.FileSystemNotFoundException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+
 import metadata.CompositionMetadataStore;
 import printer.PrintVisitorException;
+import snippet.FeatureUnit;
 import builder.ArtifactBuilderInterface;
 import builder.capprox.CApproxBuilder;
 import builder.java.JavaBuilder;
 import builder.xml.XMLHook;
 import builder.xml.XMLNode;
-
 import composer.rules.AsmetaLFunctionOverriding;
 import composer.rules.AsmetaLInitializationConcatenation;
 import composer.rules.AsmetaLInvariantConjunction;
@@ -40,7 +42,6 @@ import composer.rules.rtcomp.c.CRuntimeReplacement;
 import composer.rules.rtcomp.java.JavaRuntimeFeatureSelection;
 import composer.rules.rtcomp.java.JavaRuntimeFunctionRefinement;
 import composer.rules.rtcomp.java.JavaRuntimeReplacement;
-
 import counter.Counter;
 import de.ovgu.cide.fstgen.ast.AbstractFSTParser;
 import de.ovgu.cide.fstgen.ast.FSTNode;
@@ -165,7 +166,36 @@ public class FSTGenComposer extends FSTGenProcessor {
 				}
 			}
 			setFstnodes(AbstractFSTParser.fstnodes);
-		
+			
+			
+			/////////////////////////////
+
+			if (cmd.exportSnippet) {
+				// List of FeatureUnits. Data that needs to be sent to the Snippet System.
+				List<FeatureUnit> featureUnits;
+				featureUnits = new ArrayList<FeatureUnit>();
+				String currentFeature = "";
+				//System.out.println(AbstractFSTParser.fstnodes);
+				System.out.println("fstnodes\n");
+				for (FSTNode node : AbstractFSTParser.fstnodes) {
+					/* Ausgabe war vorher doppelt, einmal ClassDeclaration und einmal Compilation Unit.
+					 * Bei der ClassDeclaration fehlen jedoch package und imports */
+					if (!node.getType().equals("ClassDeclaration") && !node.getType().equals("language")) {
+						//System.out.println(node);
+						if (node.getType().equals("Feature") && node instanceof FSTNonTerminal) {
+							//System.out.println(node);
+							currentFeature = node.getFeatureName();
+						} else if (node.getType().equals("CompilationUnit")) {
+							//System.out.println(node);
+							FSTNonTerminal cu = (FSTNonTerminal) node;
+							FeatureUnit fu = new FeatureUnit(currentFeature, cu, cu.getChildren());
+							System.out.println(fu.export());
+						}
+					}
+				}
+			}
+			/////////////////////////////
+			
 			String equationName = new File(cmd.equationFileName).getName();
 			equationName = equationName.substring(0, equationName.length() - 4);
 		

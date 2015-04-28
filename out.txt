@@ -1,0 +1,162 @@
+Found the following features in expression file:
+BasicGraph
+Recursive
+Weight
+Color
+PrintHeader
+processing: /Users/mfey/Bachelor/SuperimpositionExamples-2011-03-15/Java/Graph/BasicGraph/Graph/Edge.java
+processing: /Users/mfey/Bachelor/SuperimpositionExamples-2011-03-15/Java/Graph/BasicGraph/Graph/Graph.java
+processing: /Users/mfey/Bachelor/SuperimpositionExamples-2011-03-15/Java/Graph/BasicGraph/Graph/Node.java
+processing: /Users/mfey/Bachelor/SuperimpositionExamples-2011-03-15/Java/Graph/Recursive/Graph/Graph.java
+processing: /Users/mfey/Bachelor/SuperimpositionExamples-2011-03-15/Java/Graph/Recursive/Graph/Node.java
+processing: /Users/mfey/Bachelor/SuperimpositionExamples-2011-03-15/Java/Graph/Weight/Graph/Edge.java
+processing: /Users/mfey/Bachelor/SuperimpositionExamples-2011-03-15/Java/Graph/Weight/Graph/Graph.java
+processing: /Users/mfey/Bachelor/SuperimpositionExamples-2011-03-15/Java/Graph/Weight/Graph/Weight.java
+processing: /Users/mfey/Bachelor/SuperimpositionExamples-2011-03-15/Java/Graph/Color/Graph/Color.java
+processing: /Users/mfey/Bachelor/SuperimpositionExamples-2011-03-15/Java/Graph/Color/Graph/Edge.java
+processing: /Users/mfey/Bachelor/SuperimpositionExamples-2011-03-15/Java/Graph/Color/Graph/Graph.java
+processing: /Users/mfey/Bachelor/SuperimpositionExamples-2011-03-15/Java/Graph/Color/Graph/Node.java
+processing: /Users/mfey/Bachelor/SuperimpositionExamples-2011-03-15/Java/Graph/PrintHeader/Graph/Graph.java
+Terminal replacement: [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default] replaces [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default]
+Terminal replacement: [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default] replaces [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default]
+Terminal replacement: [T -> Graph : Id "Graph" compose:Replacement merge: Default] replaces [T -> Graph : Id "Graph" compose:Replacement merge: Default]
+Terminal replacement: [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default] replaces [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default]
+Terminal replacement: [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default] replaces [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default]
+Terminal replacement: [T -> Node : Id "Node" compose:Replacement merge: Default] replaces [T -> Node : Id "Node" compose:Replacement merge: Default]
+Terminal replacement: [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default] replaces [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default]
+Terminal replacement: [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default] replaces [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default]
+Terminal replacement: [T -> Edge : Id "Edge" compose:Replacement merge: Default] replaces [T -> Edge : Id "Edge" compose:Replacement merge: Default]
+Terminal replacement: [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default] replaces [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default]
+Terminal replacement: [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default] replaces [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default]
+Terminal replacement: [T -> Graph : Id "Graph" compose:Replacement merge: Default] replaces [T -> Graph : Id "Graph" compose:Replacement merge: Default]
+Terminal replacement: [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default] replaces [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default]
+Terminal replacement: [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default] replaces [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default]
+Terminal replacement: [T -> Edge : Id "Edge" compose:Replacement merge: Default] replaces [T -> Edge : Id "Edge" compose:Replacement merge: Default]
+Terminal replacement: [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default] replaces [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default]
+Terminal replacement: [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default] replaces [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default]
+Terminal replacement: [T -> Graph : Id "Graph" compose:Replacement merge: Default] replaces [T -> Graph : Id "Graph" compose:Replacement merge: Default]
+Terminal replacement: [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default] replaces [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default]
+Terminal replacement: [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default] replaces [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default]
+Terminal replacement: [T -> Node : Id "Node" compose:Replacement merge: Default] replaces [T -> Node : Id "Node" compose:Replacement merge: Default]
+Terminal replacement: [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default] replaces [T -> - : PackageDeclaration "package Graph;" compose:Replacement merge: Default]
+Terminal replacement: [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default] replaces [T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default]
+Terminal replacement: [T -> Graph : Id "Graph" compose:Replacement merge: Default] replaces [T -> Graph : Id "Graph" compose:Replacement merge: Default]
+fstnodes
+
+{{"name":"Edge","type":"CompilationUnit","feature":"BasicGraph"}
+	{"name":"-","type":"PackageDeclaration","body":"package Graph;"}
+	{"name":"Edge","type":"ClassDeclaration","feature":"BasicGraph"}{"name":"Edge","type":"ClassDeclaration","feature":"BasicGraph"}
+		{"name":"-","type":"Modifiers","body":""}
+		{"name":"-","type":"ClassOrInterface1","body":"class"}
+		{"name":"Edge","type":"Id","body":"Edge"}
+		{"name":"a","type":"FieldDecl","body":"Node a;"}
+		{"name":"b","type":"FieldDecl","body":"Node b;"}
+		{"name":"Edge(Node-Node-Node-Node)","type":"ConstructorDecl","body":"Edge( Node _a, Node _b )\n    {\n        a \u003d _a;\n        b \u003d _b;\n    }"}
+		{"name":"print({FormalParametersInternal})","type":"MethodDecl","body":"void print()\n    {\n        System.out.print( \"edge (\" );\n        a.print();\n        System.out.print( \", \" );\n        b.print();\n        System.out.print( \") \" );\n    }"}}
+{{"name":"Graph","type":"CompilationUnit","feature":"BasicGraph"}
+	{"name":"-","type":"PackageDeclaration","body":"package Graph;"}
+	{"name":"java.util.*","type":"ImportDeclaration","body":"import java.util.*;"}
+	{"name":"Graph","type":"ClassDeclaration","feature":"BasicGraph"}{"name":"Graph","type":"ClassDeclaration","feature":"BasicGraph"}
+		{"name":"-","type":"Modifiers","body":""}
+		{"name":"-","type":"ClassOrInterface1","body":"class"}
+		{"name":"Graph","type":"Id","body":"Graph"}
+		{"name":"nodes","type":"FieldDecl","body":"Vector nodes \u003d new Vector();"}
+		{"name":"edges","type":"FieldDecl","body":"Vector edges \u003d new Vector();"}
+		{"name":"main(String[]-String[])","type":"MethodDecl","body":"public static void main  ( String [] args )\n    {\n        System.out.println( \"\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d BasicGraph \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\" );\n        Graph g \u003d new Graph();\n        g.add( new Node( 1 ), new Node( 2 ) );\n        g.add( new Node( 3 ), new Node( 4 ) );\n        g.print();\n        System.out.println();\n    }"}
+		{"name":"add(Node-Node-Node-Node)","type":"MethodDecl","body":"Edge add( Node n, Node m )\n    {\n        Edge e \u003d new Edge( n, m );\n        nodes.add( n );\n        nodes.add( m );\n        edges.add( e );\n        return e;\n    }"}
+		{"name":"print({FormalParametersInternal})","type":"MethodDecl","body":"void print()\n    {\n        for( int i \u003d 0; i \u003c edges.size(); i++ )\n        {\n            ( ( Edge ) edges.get( i ) ).print();\n            if( i \u003c edges.size() - 1 )\n            System.out.print( \", \" );\n        }\n    }"}}
+{{"name":"Node","type":"CompilationUnit","feature":"BasicGraph"}
+	{"name":"-","type":"PackageDeclaration","body":"package Graph;"}
+	{"name":"Node","type":"ClassDeclaration","feature":"BasicGraph"}{"name":"Node","type":"ClassDeclaration","feature":"BasicGraph"}
+		{"name":"-","type":"Modifiers","body":""}
+		{"name":"-","type":"ClassOrInterface1","body":"class"}
+		{"name":"Node","type":"Id","body":"Node"}
+		{"name":"id","type":"FieldDecl","body":"int id \u003d 0;"}
+		{"name":"Node(int-int)","type":"ConstructorDecl","body":"Node( int _id )\n    {\n        id \u003d _id;\n    }"}
+		{"name":"print({FormalParametersInternal})","type":"MethodDecl","body":"void print  ()\n    {\n        System.out.print( id );\n    }"}}
+{{"name":"Graph","type":"CompilationUnit","feature":"Recursive"}
+	{"name":"-","type":"PackageDeclaration","body":"package Graph;"}
+	{"name":"Graph","type":"ClassDeclaration","feature":"Recursive"}{"name":"Graph","type":"ClassDeclaration","feature":"Recursive"}
+		{"name":"-","type":"Modifiers","body":""}
+		{"name":"-","type":"ClassOrInterface1","body":"class"}
+		{"name":"Graph","type":"Id","body":"Graph"}
+		{"name":"main(String[]-String[])","type":"MethodDecl","body":"public static void main  ( String [] args )\n    {\n        original( args );\n        System.out.println( \"\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d SubGraph \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\" );\n        Graph g \u003d new Graph();\n        Graph g1 \u003d new Graph();\n        g1.add( new Node( 11 ), new Node( 12 ) );\n        Graph g2 \u003d new Graph();\n        g2.add( new Node( 21 ), new Node( 22 ) );\n        Graph g3 \u003d new Graph();\n        g3.add( new Node( 31 ), new Node( 32 ) );\n        Graph g4 \u003d new Graph();\n        Node n41 \u003d new Node( 41 );\n        g4.add( n41, new Node( 42 ) );\n        \n        Graph g5 \u003d new Graph();\n        g5.add( new Node( 51 ), new Node( 52 ) );\n        n41.setChildGraph( g5 );\n        \n        \n        Node n1 \u003d new Node( 1 );\n        n1.setChildGraph( g1 );\n        Node n2 \u003d new Node( 2 );\n        n2.setChildGraph( g2 );\n        Node n3 \u003d new Node( 3 );\n        n3.setChildGraph( g3 );\n        Node n4 \u003d new Node( 4 );\n        n4.setChildGraph( g4 );\n        \n        g.add( n1, n2 );\n        g.add( n3, n4 );\n        g.print();\n        System.out.println();\n    }"}}
+{{"name":"Node","type":"CompilationUnit","feature":"Recursive"}
+	{"name":"-","type":"PackageDeclaration","body":"package Graph;"}
+	{"name":"Node","type":"ClassDeclaration","feature":"Recursive"}{"name":"Node","type":"ClassDeclaration","feature":"Recursive"}
+		{"name":"-","type":"Modifiers","body":""}
+		{"name":"-","type":"ClassOrInterface1","body":"class"}
+		{"name":"Node","type":"Id","body":"Node"}
+		{"name":"childGraph","type":"FieldDecl","body":"private Graph childGraph \u003d null;"}
+		{"name":"getChildGraph({FormalParametersInternal})","type":"MethodDecl","body":"Graph getChildGraph()\n    {\n        return childGraph;\n    }"}
+		{"name":"setChildGraph(Graph-Graph)","type":"MethodDecl","body":"void setChildGraph( Graph g )\n    {\n        childGraph \u003d g;\n    }"}
+		{"name":"print({FormalParametersInternal})","type":"MethodDecl","body":"void print  ()\n    {\n        original();\n        if( childGraph !\u003d null )\n        {\n            System.out.print( \" ++ \" );\n            childGraph.print();\n            System.out.print( \" -- \" );\n        }\n    }"}}
+{{"name":"Edge","type":"CompilationUnit","feature":"Weight"}
+	{"name":"-","type":"PackageDeclaration","body":"package Graph;"}
+	{"name":"Edge","type":"ClassDeclaration","feature":"Weight"}{"name":"Edge","type":"ClassDeclaration","feature":"Weight"}
+		{"name":"-","type":"Modifiers","body":""}
+		{"name":"-","type":"ClassOrInterface1","body":"class"}
+		{"name":"Edge","type":"Id","body":"Edge"}
+		{"name":"w","type":"FieldDecl","body":"Weight w \u003d new Weight( 0 );"}
+		{"name":"setWeight(Weight-Weight)","type":"MethodDecl","body":"void setWeight( Weight _w )\n    {\n        w \u003d _w;\n    }"}
+		{"name":"print({FormalParametersInternal})","type":"MethodDecl","body":"void print  ()\n    {\n        original();\n        System.out.print( \" [\" );\n        w.print();\n        System.out.print( \"] \" );\n    }"}}
+{{"name":"Graph","type":"CompilationUnit","feature":"Weight"}
+	{"name":"-","type":"PackageDeclaration","body":"package Graph;"}
+	{"name":"Graph","type":"ClassDeclaration","feature":"Weight"}{"name":"Graph","type":"ClassDeclaration","feature":"Weight"}
+		{"name":"-","type":"Modifiers","body":""}
+		{"name":"-","type":"ClassOrInterface1","body":"class"}
+		{"name":"Graph","type":"Id","body":"Graph"}
+		{"name":"main(String[]-String[])","type":"MethodDecl","body":"public static void main  ( String [] args )\n    {\n        original( args );\n        System.out.println( \"\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d WeightedGraph \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\" );\n        Graph g \u003d new Graph();\n        g.add( new Node( 5 ), new Node( 6 ), new Weight( 1000 ) );\n        g.add( new Node( 7 ), new Node( 8 ), new Weight( 1001 ) );\n        g.print();\n        System.out.println();\n    }"}
+		{"name":"add(Node-Node-Node-Node-Weight-Weight)","type":"MethodDecl","body":"Edge add( Node n, Node m, Weight w )\n    {\n        Edge res \u003d this.add( n, m );\n        res.setWeight( w );\n        return res;\n    }"}}
+{{"name":"Weight","type":"CompilationUnit","feature":"Weight"}
+	{"name":"-","type":"PackageDeclaration","body":"package Graph;"}
+	{"name":"Weight","type":"ClassDeclaration","feature":"Weight"}{"name":"Weight","type":"ClassDeclaration","feature":"Weight"}
+		{"name":"-","type":"Modifiers","body":""}
+		{"name":"-","type":"ClassOrInterface1","body":"class"}
+		{"name":"Weight","type":"Id","body":"Weight"}
+		{"name":"w","type":"FieldDecl","body":"int w \u003d 0;"}
+		{"name":"Weight(int-int)","type":"ConstructorDecl","body":"Weight( int _w )\n    {\n        w \u003d _w;\n    }"}
+		{"name":"print({FormalParametersInternal})","type":"MethodDecl","body":"void print()\n    {\n        System.out.print( w );\n    }"}}
+{{"name":"Color","type":"CompilationUnit","feature":"Color"}
+	{"name":"-","type":"PackageDeclaration","body":"package Graph;"}
+	{"name":"Color","type":"ClassDeclaration","feature":"Color"}{"name":"Color","type":"ClassDeclaration","feature":"Color"}
+		{"name":"-","type":"Modifiers","body":""}
+		{"name":"-","type":"ClassOrInterface1","body":"class"}
+		{"name":"Color","type":"Id","body":"Color"}
+		{"name":"val","type":"FieldDecl","body":"int val \u003d 0;"}
+		{"name":"Color(int-int)","type":"ConstructorDecl","body":"Color( int v )\n    {\n        val \u003d v;\n    }"}
+		{"name":"setDisplayColor(Color-Color)","type":"MethodDecl","body":"static void setDisplayColor( Color c )\n    {\n        System.out.println( \"color changed to: \" + c.val );\n    }"}}
+{{"name":"Edge","type":"CompilationUnit","feature":"Color"}
+	{"name":"-","type":"PackageDeclaration","body":"package Graph;"}
+	{"name":"Edge","type":"ClassDeclaration","feature":"Color"}{"name":"Edge","type":"ClassDeclaration","feature":"Color"}
+		{"name":"-","type":"Modifiers","body":""}
+		{"name":"-","type":"ClassOrInterface1","body":"class"}
+		{"name":"Edge","type":"Id","body":"Edge"}
+		{"name":"color","type":"FieldDecl","body":"Color color \u003d new Color( 4711 );"}
+		{"name":"print({FormalParametersInternal})","type":"MethodDecl","body":"void print  ()\n    {\n        Color.setDisplayColor( color );\n        original();\n    }"}}
+{{"name":"Graph","type":"CompilationUnit","feature":"Color"}
+	{"name":"-","type":"PackageDeclaration","body":"package Graph;"}
+	{"name":"Graph","type":"ClassDeclaration","feature":"Color"}{"name":"Graph","type":"ClassDeclaration","feature":"Color"}
+		{"name":"-","type":"Modifiers","body":""}
+		{"name":"-","type":"ClassOrInterface1","body":"class"}
+		{"name":"Graph","type":"Id","body":"Graph"}
+		{"name":"main(String[]-String[])","type":"MethodDecl","body":"public static void main  ( String [] args )\n    {\n        original( args );\n        System.out.println( \"\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d ColorGraph \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\" );\n        Graph g \u003d new Graph();\n        g.add( new Node( 5 ), new Node( 6 ) );\n        g.add( new Node( 7 ), new Node( 8 ) );\n        g.print();\n        System.out.println();\n    }"}}
+{{"name":"Node","type":"CompilationUnit","feature":"Color"}
+	{"name":"-","type":"PackageDeclaration","body":"package Graph;"}
+	{"name":"Node","type":"ClassDeclaration","feature":"Color"}{"name":"Node","type":"ClassDeclaration","feature":"Color"}
+		{"name":"-","type":"Modifiers","body":""}
+		{"name":"-","type":"ClassOrInterface1","body":"class"}
+		{"name":"Node","type":"Id","body":"Node"}
+		{"name":"color","type":"FieldDecl","body":"Color color \u003d new Color( 815 );"}
+		{"name":"print({FormalParametersInternal})","type":"MethodDecl","body":"void print  ()\n    {\n        Color.setDisplayColor( color );\n        original();\n    }"}}
+{{"name":"Graph","type":"CompilationUnit","feature":"PrintHeader"}
+	{"name":"-","type":"PackageDeclaration","body":"package Graph;"}
+	{"name":"Graph","type":"ClassDeclaration","feature":"PrintHeader"}{"name":"Graph","type":"ClassDeclaration","feature":"PrintHeader"}
+		{"name":"-","type":"Modifiers","body":""}
+		{"name":"-","type":"ClassOrInterface1","body":"class"}
+		{"name":"Graph","type":"Id","body":"Graph"}
+		{"name":"s","type":"FieldDecl","body":"static int s \u003d 0;"}
+		{"name":"main(String[]-String[])","type":"MethodDecl","body":"public static void main  ( String [] args )\n    {\n        original( args );\n        System.out.println( \"\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d PrintHeader \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\" );\n        System.out.println( \"nothing to do here\" );\n    }"}
+		{"name":"print({FormalParametersInternal})","type":"MethodDecl","body":"void print  ()\n    {\n        s++;\n        if( s \u003d\u003d 1 )\n        {\n            printTopLevelHeader();\n        }\n        else\n        {\n            printSubLevelHeader();\n        }\n        original();\n        s--;\n    }"}
+		{"name":"printTopLevelHeader({FormalParametersInternal})","type":"MethodDecl","body":"static void printTopLevelHeader()\n    {\n        System.out.print( \"top: \" );\n    }"}
+		{"name":"printSubLevelHeader({FormalParametersInternal})","type":"MethodDecl","body":"static void printSubLevelHeader()\n    {\n        System.out.print( \"sub: \" );\n    }"}}
