@@ -68,10 +68,9 @@ public class FSTNonTerminal extends FSTNode {
 	}
 
 	public String toStringShort() {
-		//return "[NT -> " + getName() + " : " + getType() + "]";
+		return "[NT -> " + getName() + " : " + getType() + "]";
 		//////////////
-		Gson gsonNonTerminal = new GsonBuilder().registerTypeAdapter(FSTNonTerminal.class, new FSTNonTerminalSerializer()).create();
-		return gsonNonTerminal.toJson(this);
+
 		//////////////
 	}
 
@@ -93,16 +92,37 @@ public class FSTNonTerminal extends FSTNode {
 			//return "";
 			return "FeatureName:" + getFeatureName();
 			/////////////////
-		String shortS = toStringShort();
-		return shortS + exportChildrenList();
+		Gson gsonNonTerminal = new GsonBuilder().registerTypeAdapter(FSTNonTerminal.class, new FSTNonTerminalSerializer()).create();
+		String json = gsonNonTerminal.toJson(this);
+		//String shortS = toStringShort();
+		if (this.getType().equalsIgnoreCase("CompilationUnit")) {
+			return exportChildrenList();
+		} else {
+			return exportChildrenList();
+		}
+		
 	}
 	
 	public String exportChildrenList() {
 		level++;
+		// Serializer for JSON
 		Gson gsonTerminal = new GsonBuilder().registerTypeAdapter(FSTTerminal.class, new FSTTerminalSerializer()).create();
 		Gson gsonNonTerminal = new GsonBuilder().registerTypeAdapter(FSTNonTerminal.class, new FSTNonTerminalSerializer()).create();
-		
 		String result = "";
+		if (this.getType().equalsIgnoreCase("ClassDeclaration")) {
+			result += "{"
+					+ "\"name\":" + "\"" + this.getName() + "\","
+					+ "\"type\":" + "\"" + this.getType() + "\","
+					+ "\"feature\":" + "\"" + this.getFeatureName() + "\","
+					+ "\"classbody\":[";
+		} else if (this.getType().equalsIgnoreCase("CompilationUnit")){
+			result += "{"
+					+ "\"name\":" + "\"" + this.getName() + "\","
+					+ "\"featurename\":" + "\"" + this.getFeatureName() + "\","
+					+ "\"compilationunit\":[";
+		}
+		
+
 		for (int idx = 0; idx < children.size(); idx++) {
 			// if (idx != 0)
 			result += "\n";
@@ -111,24 +131,43 @@ public class FSTNonTerminal extends FSTNode {
 			
 			if (children.get(idx) instanceof FSTTerminal) {
 				result += gsonTerminal.toJson((FSTTerminal)children.get(idx));
+				result += ",";
 			} else {
-				result += gsonNonTerminal.toJson((FSTNonTerminal)children.get(idx));
+				// Results in multiple output of the classdeclaration node
+				//result += gsonNonTerminal.toJson((FSTNonTerminal)children.get(idx));
+				//result += ",";
 				result += children.get(idx).export();
 			}
 			
+			
 		}
 		level--;
+		// close the JSON Array
+		result += "]}";
+		// Remove the last ',' in order to comply with JSON 
+		result = replaceLast(result, ",]", "]");
+		if (this.getType().equalsIgnoreCase("CompilationUnit")) {
+			result += ",";
+		}
 		return result;
 	}
 	
 	
+	private String replaceLast(String string, String from, String to) {
+	     int lastIndex = string.lastIndexOf(from);
+	     if (lastIndex < 0) return string;
+	     String tail = string.substring(lastIndex).replaceFirst(from, to);
+	     return string.substring(0, lastIndex) + tail;
+	}
+	
 	public static class FSTNonTerminalSerializer implements JsonSerializer<FSTNonTerminal> {
         public JsonElement serialize(final FSTNonTerminal node, final Type type, final JsonSerializationContext context) {
+        	//Gson gsonTerminal = new GsonBuilder().registerTypeAdapter(FSTTerminal.class, new FSTTerminalSerializer()).create();
             JsonObject result = new JsonObject();
             result.add("name", new JsonPrimitive(node.getName()));
             result.add("type", new JsonPrimitive(node.getType()));
             result.add("feature", new JsonPrimitive(node.getFeatureName()));
-
+            
             return result;
         }
 	}

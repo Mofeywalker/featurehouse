@@ -1,19 +1,19 @@
 package composer;
 
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.nio.file.FileSystemNotFoundException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-
 import metadata.CompositionMetadataStore;
 import printer.PrintVisitorException;
 import snippet.FeatureUnit;
+import snippet.Server;
 import builder.ArtifactBuilderInterface;
 import builder.capprox.CApproxBuilder;
 import builder.java.JavaBuilder;
@@ -172,14 +172,16 @@ public class FSTGenComposer extends FSTGenProcessor {
 
 			if (cmd.exportSnippet) {
 				// List of FeatureUnits. Data that needs to be sent to the Snippet System.
-				List<FeatureUnit> featureUnits;
-				featureUnits = new ArrayList<FeatureUnit>();
+				//List<FeatureUnit> featureUnits;
+				//featureUnits = new ArrayList<FeatureUnit>();
 				String currentFeature = "";
 				//System.out.println(AbstractFSTParser.fstnodes);
-				System.out.println("fstnodes\n");
+				String output = "[";
+				//System.out.println("[");
 				for (FSTNode node : AbstractFSTParser.fstnodes) {
-					/* Ausgabe war vorher doppelt, einmal ClassDeclaration und einmal Compilation Unit.
-					 * Bei der ClassDeclaration fehlen jedoch package und imports */
+					/* At first there were two outputs for each file, ClassDeclaration and Compilation Unit.
+					 * In the ClassDeclaration there are no package and import statements
+					 */
 					if (!node.getType().equals("ClassDeclaration") && !node.getType().equals("language")) {
 						//System.out.println(node);
 						if (node.getType().equals("Feature") && node instanceof FSTNonTerminal) {
@@ -189,11 +191,23 @@ public class FSTGenComposer extends FSTGenProcessor {
 							//System.out.println(node);
 							FSTNonTerminal cu = (FSTNonTerminal) node;
 							FeatureUnit fu = new FeatureUnit(currentFeature, cu, cu.getChildren());
-							System.out.println(fu.export());
+							//System.out.println(fu.export());
+							output += fu.export();
 						}
 					}
 				}
+				//System.out.println(output.substring(0, output.length()-1) +"]");
+				// Create a server and use the parsed json as data
+				new Server(output.substring(0, output.length()-1) +"]");
 			}
+			
+			// Print Feature Structure Tree
+			if (cmd.showFST) {
+				for (FSTNode node : AbstractFSTParser.fstnodes) {
+					System.out.println(node.toString());
+				}
+			}
+			
 			/////////////////////////////
 			
 			String equationName = new File(cmd.equationFileName).getName();

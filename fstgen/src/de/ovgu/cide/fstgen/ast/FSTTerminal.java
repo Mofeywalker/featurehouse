@@ -123,12 +123,6 @@ public class FSTTerminal extends FSTNode {
 		 */
 	}
 	
-	public String escapeCharacters(String in) {
-		String out;
-		in.replaceAll("\"", "\\\"");
-		return in;
-	}
-	
 	
 	public static class FSTTerminalSerializer implements JsonSerializer<FSTTerminal> {
         public JsonElement serialize(final FSTTerminal node, final Type type, final JsonSerializationContext context) {

@@ -37,6 +37,6 @@ public class FeatureUnit {
 	}
 	
 	public String export() {
-		return "{" + compilationUnitRoot.export() + "}";
+		return compilationUnitRoot.export();
 	}
 }
